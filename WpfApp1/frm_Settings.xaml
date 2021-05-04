@@ -1,0 +1,362 @@
+﻿<Window x:Class="WpfApp1.frm_Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Title="Settings" Height="630" Width="360">
+
+    <Grid Name="grdMain" Width="348" Background="#F9F9F9">
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" SnapsToDevicePixels="True">-->
+        <Border>
+            <Grid Name="grdChild" Background="#F9F9F9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="{StaticResource RowSpacing}"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="5" Background="#000549" Height="35">
+                    <Button Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="Transparent" Margin="10,0,0,5" BorderThickness="0" Padding="0" Style="{DynamicResource SettingButton}">
+                        <Image Source="/Icon/back.png" Height="18" Width="18"/>
+                    </Button>
+                    <!--<Button Name="btnServerSelect" Content="Server Selection" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Padding="0" FontSize="17" Margin="0,0,0,2" Background="Transparent" BorderThickness="0" Click="BtnServerSelect_Click" Style="{DynamicResource SettingButton}"/>-->
+                    <Label Name="lblSettings" Content="SETTINGS" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Padding="0" FontSize="17" Margin="0,0,0,2"/>
+                </Grid>
+
+                <Button Name="btnGeneral" Grid.Row="2" Grid.Column="0" Padding="3" Margin="0,-5,0,0" Content="General" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Foreground="#000549" FontWeight="Bold" Click="BtnGeneral_Click" FontSize="11" Style="{DynamicResource TabButtons}"/>
+                <Label Name="lblLine1" Grid.Row="2" Grid.Column="0" Margin="0,25,0,0" Background="#4EB8EA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+                <Button Name="btnAutoConnect" Grid.Row="2" Grid.Column="1" Padding="3" Margin="0,-5,0,0" Content="Auto - Connect" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Foreground="#000549" FontWeight="Bold" Click="BtnAutoConnect_Click" FontSize="11" Style="{DynamicResource TabButtons}"/>
+                <Label Name="lblLine2" Grid.Row="2" Grid.Column="1" Margin="0,25,0,0" Background="#4EB8EA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+                <Button Name="btnKillSwitch" Grid.Row="2" Grid.Column="2" Padding="3" Margin="0,-5,0,0" Content="Kill Switch" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Foreground="#000549" FontWeight="Bold" Click="BtnKillSwitch_Click" FontSize="11" Style="{DynamicResource TabButtons}"/>
+                <Label Name="lblLine3" Grid.Row="2" Grid.Column="2" Margin="0,25,0,0" Background="#4EB8EA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+                <Button Name="btnSplitTunneling" Grid.Row="2" Grid.Column="3" Padding="3" Margin="0,-5,0,0" Content="Split Tunneling" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Foreground="#000549" FontWeight="Bold" Click="BtnSplitTunneling_Click" FontSize="11" Style="{DynamicResource TabButtons}"/>
+                <Label Name="lblLine4" Grid.Row="2" Grid.Column="3" Margin="0,25,0,0" Background="#4EB8EA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+                <Button Name="btnAdvanced" Grid.Row="2" Grid.Column="4" Padding="3" Margin="0,-5,0,0" Content="Advanced" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Foreground="#000549" FontWeight="Bold" Click="BtnAdvanced_Click" FontSize="11" Style="{DynamicResource TabButtons}"/>
+                <Label Name="lblLine5" Grid.Row="2" Grid.Column="4" Margin="0,25,0,0" Background="#4EB8EA" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Name="grdGeneral" Visibility="Collapsed" Width="348" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="2" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Name="lblLaunchAtStartUp" Grid.Row="0" Grid.Column="0" Content="Launch at Window startup" Foreground="#5A5A5A"/>
+                        <CheckBox Name="chkLaunchAtStartUp" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                        <Label Name="lblLaunchAppMinimize" Grid.Row="2" Grid.Column="0" Content="Launch the app minimized" Foreground="#5A5A5A"/>
+                        <CheckBox Name="chkLaunchAppMinimize" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                        <Label Name="lblShowNotification" Grid.Row="4" Grid.Column="0" Content="Show VPN connection status notifications" Foreground="#5A5A5A"/>
+                        <CheckBox Name="chkVpnConStatusNotification" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                        <Label Name="lblLanguage" Grid.Row="6" Grid.Column="0" Content="Language" Foreground="#5A5A5A"/>
+                        <ComboBox Name="cmbLanguage" Grid.Row="6" Grid.ColumnSpan="2" Style="{DynamicResource theComboBox}"  HorizontalAlignment="Right" VerticalAlignment="Center" SelectedIndex="0"
+                                 Width="100" Height="30" ItemContainerStyle="{DynamicResource theComboBoxItem}" Margin="0,0,5,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem>English</ComboBoxItem>
+                            <ComboBoxItem>Hindi</ComboBoxItem>
+                            <ComboBoxItem>French</ComboBoxItem>
+                            <ComboBoxItem>Japanese</ComboBoxItem>
+                            <ComboBoxItem>Chinese</ComboBoxItem>
+                        </ComboBox>
+                    </Grid>
+                    <Label Grid.Row="3" Name="lblAccountDetails" Content="Account Details" HorizontalAlignment="Left" Foreground="#000549" FontWeight="Bold" Padding="8" />
+                    <Grid Grid.Row="4" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="auto"/>
+                            <!--<RowDefinition Height="{StaticResource RowSpacing}"/>-->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="298"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="1" Grid.Column="0" Source="/Icon/Email.png" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="#DFDFDF">
+                            <Grid>
+                                <Label Grid.Row="1" Grid.Column="1" Content="Email ID" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" FontSize="14" FontWeight="Bold" Margin="0,2,0,0"/>
+                                <Label Grid.Row="1" Grid.Column="1" Content="rsiemens@topchoicesales.com" Name="lblEmailID" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" FontSize="12" Margin="0,18,0,5"/>
+                            </Grid>
+                        </Border>
+
+                        <Image Grid.Row="3" Grid.Column="0" Source="/Icon/ProductTag.png" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Grid.Row="3" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="#DFDFDF">
+                            <Grid>
+                                <Label Grid.Row="3" Grid.Column="1" Content="Product Name" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" FontSize="14" FontWeight="Bold" Margin="0,2,0,0"/>
+                                <Label Grid.Row="3" Grid.Column="1" Content="12 Months - VPN" Name="lblProductName" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" FontSize="12" Margin="0,18,0,5"/>
+                            </Grid>
+                        </Border>
+
+                        <Image Grid.Row="5" Grid.Column="0" Source="/Icon/Devices.png" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Grid.Row="5" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="#DFDFDF">
+                            <Grid>
+                                <Label Grid.Row="5" Grid.Column="1" Content="Active Devices" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" FontSize="14" FontWeight="Bold" Margin="0,2,0,0"/>
+                                <Label Grid.Row="5" Grid.Column="1" Content="1/5" Name="lblActiveDevice" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" FontSize="12" Margin="0,18,0,5"/>
+                            </Grid>
+                        </Border>
+
+                        <Image Grid.Row="7" Grid.Column="0" Source="/Icon/ExpiresOn.png" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Border Grid.Row="7" Grid.Column="1" BorderThickness="0 0 0 0" Padding="2">
+                            <Grid>
+                                <Label Grid.Row="7" Grid.Column="1" Content="Expire On" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" FontSize="14" FontWeight="Bold" Margin="0,2,0,0"/>
+                                <Label Grid.Row="7" Grid.Column="1" Content="8 Jan 2022" Name="lblExpireOn" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" FontSize="12" Margin="0,18,0,5"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="8" Background="White" Height="50">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="298"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Source="/Icon/Logout.png" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Button Grid.Row="0" Grid.Column="1" Content="Logout" Foreground="#000549" Background="Transparent" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Left" Padding="0" FontSize="14" FontWeight="Bold" Style="{DynamicResource LogoutButton}"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Name="grdAutoConnect" Visibility="Collapsed" Width="348" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="2" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Name="lblWhenAppLaunches" Grid.Row="0" Grid.Column="0" Content="Always when the app launches" Foreground="#5A5A5A"/>
+                        <CheckBox Name="chkWhenAppLaunches" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                        <Label Name="lblAutoConnectOnWiFi" Grid.Row="2" Grid.Column="0" Content="Auto-Connect on Wi-Fi :" Foreground="#5A5A5A"/>
+                        <ComboBox Name="cmbAutoConnectOnWiFi" Grid.Row="2" Grid.ColumnSpan="2" Style="{DynamicResource theComboBox}"  HorizontalAlignment="Right" VerticalAlignment="Center" SelectedIndex="0"
+                                 Width="100" Height="30" ItemContainerStyle="{DynamicResource theComboBoxItem}" Margin="0,0,5,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                            <ComboBoxItem>Off</ComboBoxItem>
+                            <ComboBoxItem>On</ComboBoxItem>
+                        </ComboBox>
+                        <Label Name="lblChooseVPNProtocolAndServerAutomatically" Grid.Row="4" Grid.Column="0" Content="Choose a VPN protocol &amp; server automatically" Foreground="#5A5A5A"/>
+                        <CheckBox Name="chkChooseVPNProtocolAndServerAutomatically" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Name="grdKillSwitch" Visibility="Collapsed" Width="348" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="2" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="1" Grid.Column="0" BorderThickness="0">
+                            <Grid>
+                                <Label Grid.Row="1" Grid.Column="1" Name="lblInternetKillSwitch" Content="Internet Kill Switch" Foreground="#000549" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" FontSize="14" FontWeight="Bold" Margin="10,2,0,0"/>
+                                <Label Grid.Row="1" Grid.Column="1" Content="Disable your lorem ipsum dummy text" Name="lblDisbleLoremIpsumText" Foreground="#5A5A5A" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="0" FontSize="12" Margin="10,18,0,5"/>
+                            </Grid>
+                        </Border>
+                        <CheckBox Name="chkInternetKillSwitch" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+
+                        <Label Grid.Row="3" Grid.Column="0" Name="lblAppKillSwitch" Content="App Kill Switch" Foreground="#000549" Padding="0" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Margin="10,0,0,0" />
+                        <CheckBox Name="chkAppKillSwitch" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+
+                        <Border Grid.Row="5" Grid.ColumnSpan="2" Height="150" BorderThickness="1" BorderBrush="#BABABA" CornerRadius="8" Margin="10,0,10,0" Padding="2">
+                            <ListBox Grid.Row="5" Name="lstAppList" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" BorderThickness="0" ItemContainerStyle="{StaticResource ListBoxStyle}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:uc_AppKillSwitchControl/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Border>
+                        <TextBlock Grid.Row="9" Grid.Column="0" Text="Lorem ipsum dummy text here because text not seen" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                   TextWrapping="Wrap" Foreground="#5A5A5A" Margin="10,0,10,0"/>
+                        <Button Grid.Row="9" Grid.Column="1" Content="ADD APPS" Style="{DynamicResource AutoConnectRoundCorner}" Foreground="White" Margin="10,0,10,0"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Name="grdSplitTunneling" Visibility="Collapsed" Width="348" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Name="lblSplitTunneling" Content="Split Tunneling" Foreground="#000549" FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Choose which apps use VPN-protected connections" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,20,0,0" Foreground="#5A5A5A" />
+                        <CheckBox Name="chkSplitTunneling" Grid.RowSpan="2" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                    </Grid>
+                    <Grid Grid.Row="3" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="1" Grid.Column="0" Content="Disable VPN for selected apps" Foreground="#5A5A5A" Margin="10,0,0,0"/>
+                        <RadioButton Name="rdbDisableVPN" GroupName="EnableDisableRadio" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource RadioButtonStyle}"/>
+                        <Label Grid.Row="3" Grid.Column="0" Content="Enable VPN for selected apps" Foreground="#5A5A5A" Margin="10,0,0,0"/>
+                        <RadioButton Name="rdbEnableVPN" GroupName="EnableDisableRadio" Grid.Row="3" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource RadioButtonStyle}"/>
+                        <Border Grid.Row="5" Grid.ColumnSpan="2" Height="150" BorderThickness="1" BorderBrush="#BABABA" CornerRadius="8" Margin="15,0,13,0" Padding="2">
+                            <ListBox Grid.Row="5" Name="lstAppList1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"
+                                    ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" BorderThickness="0" ItemContainerStyle="{StaticResource ListBoxStyle}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:uc_AppKillSwitchControl/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Border>
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Lorem ipsum dummy text here because text not seen" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                   TextWrapping="Wrap" Foreground="#5A5A5A" Margin="15,0,0,0"/>
+                        <Button Grid.Row="7" Grid.Column="1" Content="ADD APPS" Style="{DynamicResource AutoConnectRoundCorner}" Foreground="White" Margin="5,0,15,0"/>
+                    </Grid>
+                    <Grid Grid.Row="6" Background="White">
+                        <Label Grid.Row="0" Grid.Column="0" Name="lblAutoKill" Content="Auto Kill when server is lost" Foreground="#5A5A5A" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="15,15,15,15"/>
+                        <CheckBox Name="chkAutoKillSplitTunneling" Grid.RowSpan="2" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" Grid.ColumnSpan="5" Name="grdAdvanced" Visibility="Visible" Width="348" HorizontalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="3" Background="White">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                            <RowDefinition Height="{StaticResource RowSpacing}"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="230"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="1" Content="Custom DNS" Foreground="#5A5A5A" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <CheckBox Name="chkCustomDNS" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+
+                        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.ColumnSpan="3" Content="VPN PROTOCOL" FontWeight="Bold"/>
+                            <CheckBox Grid.Row="1" Grid.Column="0" Name="chkAutomatic" Content="Automatic" Foreground="#5A5A5A" Margin="5,0,0,0" BorderBrush="#4EB8EA" BorderThickness="1.5" Padding="6,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <CheckBox Grid.Row="1" Grid.Column="1" Name="chkOpenVpn" Content="Open VPN" Foreground="#5A5A5A" Padding="6,0,0,0" BorderBrush="#4EB8EA" BorderThickness="1.5" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <CheckBox Grid.Row="1" Grid.Column="2" Name="chkIkev" Content="IKEv2" Foreground="#5A5A5A" Padding="6,0,0,0" BorderBrush="#4EB8EA" BorderThickness="1.5" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                        </Grid>
+
+                        <Label Grid.Row="5" Content="DNS Fallback" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <CheckBox Name="chkDNSFallback" Grid.Row="5" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Style="{DynamicResource ToggleButtonStyle}"/>
+                        <TextBlock Grid.Row="6" Grid.ColumnSpan="2" TextWrapping="Wrap" Foreground="#5A5A5A" Margin="5,0,0,0"
+                                   Text="Use Google DNS servers as a fallback for Connection that route all internet traffic through the VPN tunnel but Don't define any VPN DNS Servers"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

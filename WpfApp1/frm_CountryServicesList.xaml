@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp1.frm_CountryServicesList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen"
+        Title="Services" Height="630" Width="360">
+    <Grid Name="grdMain">
+        <Grid Name="grdServiceList">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Background="#000549" Height="35">
+                <Button Name="btnBack" HorizontalAlignment="Left" VerticalAlignment="Bottom" Background="Transparent" Margin="10,0,0,5" BorderThickness="0" Padding="0" Style="{DynamicResource SettingButton}">
+                    <Image Source="/Icon/back.png" Height="17" Width="17"/>
+                </Button>
+                <Label Name="lblServerSelect"  MouseRightButtonDown="LblServerSelect_Click" MouseLeftButtonDown="LblServerSelect_Click" Content="UK Services" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="25" Padding="0" FontSize="16" Margin="0,0,0,2"/>
+                <Image MouseLeftButtonDown="LblServerSelect_Click" MouseRightButtonDown="LblServerSelect_Click" Source="/Icon/downarrow.png" Height="12" Width="12" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="95,12,0,0"/>
+            </Grid>
+
+            <ListBox Grid.Row="2" Name="lstbxCountrywiseLocations" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False" BorderThickness="0" ItemContainerStyle="{StaticResource ListBoxStyle}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <local:uc_SelectLocation MouseLeftButtonDown="Uc_SelectLocation_MouseDown" MouseRightButtonDown="Uc_SelectLocation_MouseDown"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</Window>

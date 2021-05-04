@@ -1,0 +1,89 @@
+﻿<Window x:Class="WpfApp1.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="VPN LIGHTING" Height="630" Width="360">
+    <Grid Name="grdMain" Background="#000549">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="530"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="Icon/login_back.png"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="{StaticResource RowSpacing}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="4" Source="/Icon/vpn_1.png" Height="150" Width="230" Margin="0,5,0,5"/>
+            <Label Grid.Row="7" Name="lblUserId" Content="Email" HorizontalAlignment="Left" Padding="0,5,5,0" Margin="25,0,10,8" FontSize="14" FontWeight="Bold" Foreground="#000549"/>
+            <Grid Grid.Row="8" Margin="15,0,15,0" Width="300" HorizontalAlignment="Center">
+                <Border BorderBrush="#4EB8EA" BorderThickness="0.75" CornerRadius="8" Background="#EFEFEF">
+                    <DockPanel>
+                        <Image Source="/Icon/Icon ionic-md-mail.png" Height="20" Width="20" Margin="10,5,5,5"/>
+                        <TextBox Name="txtUserId" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Height="35" BorderThickness="0" VerticalContentAlignment="Center"/>
+                    </DockPanel>
+                </Border>
+            </Grid>
+            <Label Grid.Row="9" Name="lblPassword" Content="Password" HorizontalAlignment="Left" Padding="0,5,5,0" Margin="25,5,0,8" FontSize="14" FontWeight="Bold" Foreground="#000549"/>
+            <Grid Grid.Row="10" Margin="15,0,15,0" HorizontalAlignment="Center" Width="300" Background="#EFEFEF">
+                <Border BorderBrush="#4EB8EA" BorderThickness="0.75" CornerRadius="8">
+                    <DockPanel>
+                        <Image Source="/Icon/Icon feather-key.png" Height="20" Width="20" Margin="10,5,5,5"/>
+                        <PasswordBox Name="txtPassword" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent" Height="35" BorderThickness="0" VerticalContentAlignment="Center"/>
+                    </DockPanel>
+                </Border>
+            </Grid>
+            <CheckBox Grid.Row="12" Name="chkRememberMe" Content="Remember Me" Margin="25,5,10,10" FontWeight="Bold" FontSize="14" VerticalContentAlignment="Center" Foreground="#000549"/>
+            <Button Grid.Row="14" Name="btnLogin" Height="40" Width="300" HorizontalAlignment="Stretch" Content="Login" FontWeight="Bold" FontSize="16" Margin="10,0,10,0" Style="{DynamicResource ManualRoundCorner}" Foreground="White" Click="BtnLogin_Click">
+                <!--<Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#000549"/>
+                        <Setter Property="Foreground" Value="WhiteSmoke"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>-->
+            </Button>
+            <Label Grid.Row="17" Name="lblServiceText" Content="To Order Services, Please Visit us at" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,5,0,0" FontWeight="Bold" FontSize="15" Foreground="#000549"/>
+            <Label Grid.Row="18" HorizontalAlignment="Center" VerticalAlignment="Bottom" Padding="0,5,0,0" FontSize="16">
+                <Hyperlink Name="lnkSite" RequestNavigate="LnkSite_RequestNavigate" FontSize="16" FontWeight="Bold" Foreground="#4EB8EA">www.vpnlighting.com</Hyperlink>
+            </Label>
+        </Grid>
+    </Grid>
+</Window>

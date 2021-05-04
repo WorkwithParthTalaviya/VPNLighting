@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="WpfApp1.uc_SelectLocation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1"
+             mc:Ignorable="d" Width="300" BorderThickness="0" BorderBrush="Transparent">
+    <Border BorderBrush="#DBDBDB" Background="White" BorderThickness="0.75" CornerRadius="8" Width="300" HorizontalAlignment="Center">
+        <Button Name="btnRecentLocations">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Background="Transparent" HorizontalAlignment="Center" Width="280" Height="50">
+                        <Image Source="{Binding strImagePath}"  Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"/>
+                        <Label Name="lblSmartLocation" Content="{Binding strServerName}"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="50" VerticalContentAlignment="Center" BorderThickness="0" Margin="35,0,0,0" FontSize="13" FontWeight="Bold" />
+                        <Label Name="lblTime" Content="{Binding strTime}" HorizontalAlignment="Right" VerticalAlignment="Stretch" Height="50" VerticalContentAlignment="Center" BorderThickness="0" FontSize="13" FontWeight="Bold" Foreground="#4EB8EA" />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Border>
+</UserControl>
